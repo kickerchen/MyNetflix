@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WhiteButton: View {
+struct PlayButton: View {
     var text: String
     var imageName: String
     var backgroundColor: Color = Color.white
@@ -40,7 +40,7 @@ struct WhiteButton_Previews: PreviewProvider {
             Color.black
                 .edgesIgnoringSafeArea(.all)
 
-            WhiteButton(text: "Play", imageName: "play.fill") {
+            PlayButton(text: "Play", imageName: "play.fill") {
                 //
             }
         }
