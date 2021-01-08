@@ -31,9 +31,10 @@ struct Movie: Identifiable {
 
     var promotionHeadline: String?
 
+    var trailers: [Trailer]
+
     var numberOfSeasonsDisplay: String {
         guard let num = numberOfSeasons else { return "" }
-
         return num == 1 ? "1 season" : "\(num) seasons"
     }
 
@@ -46,7 +47,6 @@ struct Movie: Identifiable {
 
     var episodeDescriptionDisplay: String {
         guard let current = currentEpisode else { return defaultEpisodeInfo.description }
-
         return current.description
     }
 }
