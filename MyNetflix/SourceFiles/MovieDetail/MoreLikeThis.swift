@@ -9,13 +9,13 @@ import SwiftUI
 
 struct MoreLikeThis: View {
     var movies: [Movie]
-    
+
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-    
+
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {

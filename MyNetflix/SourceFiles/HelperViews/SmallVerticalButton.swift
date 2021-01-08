@@ -14,7 +14,7 @@ struct SmallVerticalButton: View {
     var isOn: Bool
     var imageName: String { isOn ? isOnImage : isOffImage }
     var action: () -> Void
-    
+
     var body: some View {
         Button(action: {
             action()

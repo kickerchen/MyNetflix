@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct HomeView: View {
-    var vm = HomeVM()
+    var viewModel = HomeVM()
 
     var body: some View {
         ZStack {
             Color.black
                 .edgesIgnoringSafeArea(.all)
-            
+
             // main vstack
             ScrollView(.vertical, showsIndicators: false, content: {
                 LazyVStack {
-                    
+
                     TopRowButtons()
-                    
+
                     TopMoviePreview(movie: exampleMovie4)
                         .frame(width: UIScreen.main.bounds.width)
                         .padding(.top, -110)
                         .zIndex(-1)
-                    
-                    ForEach(vm.allCategories, id: \.self) { category in
+
+                    ForEach(viewModel.allCategories, id: \.self) { category in
                         VStack {
                             HStack {
                                 Text(category)
@@ -35,10 +35,10 @@ struct HomeView: View {
                                 Spacer()
                             }
                         }
-                        
+
                         ScrollView(.horizontal, showsIndicators: false, content: {
                             HStack {
-                                ForEach(vm.getMovie(forCat: category)) { movie in
+                                ForEach(viewModel.getMovie(forCat: category)) { movie in
                                     StandardHomeMovie(movie: movie)
                                         .frame(width: 100, height: 200)
                                         .padding(.horizontal, 20)
@@ -71,27 +71,27 @@ struct TopRowButtons: View {
                     .frame(width: 50)
             })
             .buttonStyle(PlainButtonStyle())
-            
+
             Spacer()
-            
+
             Button(action: {
                 //
             }, label: {
                 Text("TV Shows")
             })
             .buttonStyle(PlainButtonStyle())
-            
+
             Spacer()
-            
+
             Button(action: {
                 //
             }, label: {
                 Text("Movies")
             })
             .buttonStyle(PlainButtonStyle())
-            
+
             Spacer()
-            
+
             Button(action: {
                 //
             }, label: {

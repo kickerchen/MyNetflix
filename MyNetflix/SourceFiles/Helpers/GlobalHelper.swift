@@ -101,6 +101,7 @@ var exampleMovies: [Movie] {
     return [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6].shuffled()
 }
 
+// swiftlint:disable:next line_length
 let exampleEpisodeInfo = CurrentEpisodeInfo(episodeName: "Beginnings and Endings", description: "Six months after the disappearances, the police form a task force. In 2052, [sic] Jonas learns that most of Winden perished in an apocalyptic event.", season: 2, episode: 1)
 
 extension LinearGradient {

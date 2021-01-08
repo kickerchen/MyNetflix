@@ -223,6 +223,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7918F22325A59FF50079F446 /* Build configuration list for PBXNativeTarget "MyNetflix" */;
 			buildPhases = (
+				797A3FC525A7E9410047D5DA /* SwiftLint */,
 				7918F1FA25A59FF20079F446 /* Sources */,
 				7918F1FB25A59FF20079F446 /* Frameworks */,
 				7918F1FC25A59FF20079F446 /* Resources */,
@@ -345,6 +346,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		797A3FC525A7E9410047D5DA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7918F1FA25A59FF20079F446 /* Sources */ = {

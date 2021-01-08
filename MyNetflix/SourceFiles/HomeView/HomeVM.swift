@@ -8,17 +8,17 @@
 import Foundation
 
 class HomeVM: ObservableObject {
-    
+
     @Published var movies: [String: [Movie]] = [:]
-    
+
     public var allCategories: [String] { movies.keys.map {String($0)} }
 
     public func getMovie(forCat cat: String) -> [Movie] { movies[cat] ?? [] }
-    
+
     init() {
         setupMovies()
     }
-    
+
     func setupMovies() {
         movies["Trending Now"] = exampleMovies
         movies["Stand-Up Comedy"] = exampleMovies.shuffled()

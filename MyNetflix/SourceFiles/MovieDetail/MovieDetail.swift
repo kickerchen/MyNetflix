@@ -16,11 +16,11 @@ struct MovieDetail: View {
         ZStack {
             Color.black
                 .edgesIgnoringSafeArea(.all)
-            
+
             VStack {
                 HStack {
                     Spacer()
-                    
+
                     Button(action: {
                         // dismiss
                     }, label: {
@@ -29,29 +29,30 @@ struct MovieDetail: View {
                     })
                     .padding(.horizontal, 22)
                 }
-                
+
                 ScrollView(.vertical, showsIndicators: false, content: {
                     VStack {
                         StandardHomeMovie(movie: movie)
                             .frame(width: screen.width / 2.5)
-                        
+
                         MovieInfoSubheadline(movie: movie)
-                        
+
                         if let promotion = movie.promotionHeadline {
                             Text(promotion)
                                 .bold()
                                 .font(.headline)
                         }
-                        
+
                         PlayButton(text: "Play", imageName: "play.fill", backgroundColor: .red) {
                             //
                         }
-                        
+
                         CurrentEpisodeInformation(movie: movie)
-                        
+
                         CastInfo(movie: movie)
-                        
+
                         HStack(spacing: 60) {
+                            // swiftlint:disable line_length
                             SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true) {
                                 //
                             }
@@ -61,13 +62,14 @@ struct MovieDetail: View {
                             SmallVerticalButton(text: "Share", isOnImage: "square.and.arrow.up", isOffImage: "square.and.arrow.up", isOn: true) {
                                 //
                             }
+                            // swiftlint:enable line_length
                             Spacer()
                         }
                         .padding(.leading, 20)
                     }
                     .padding(.horizontal, 10)
                 })
-                
+
                 Spacer()
             }
             .foregroundColor(.white)
@@ -83,16 +85,16 @@ struct MovieDetail_Previews: PreviewProvider {
 
 struct MovieInfoSubheadline: View {
     var movie: Movie
-    
+
     var body: some View {
         HStack {
             Image(systemName: "hand.thumbsup.fill")
                 .foregroundColor(.white)
-            
+
             Text(String(movie.year))
-            
+
             RatingView(rating: movie.rating)
-            
+
             Text(movie.numberOfSeasonsDisplay)
         }
         .foregroundColor(.gray)
@@ -102,7 +104,7 @@ struct MovieInfoSubheadline: View {
 
 struct RatingView: View {
     var rating: String
-    
+
     var body: some View {
         ZStack {
             Rectangle()
@@ -118,7 +120,7 @@ struct RatingView: View {
 
 struct CastInfo: View {
     var movie: Movie
-    
+
     var body: some View {
         VStack(spacing: 3) {
             HStack {
@@ -138,7 +140,7 @@ struct CastInfo: View {
 
 struct CurrentEpisodeInformation: View {
     var movie: Movie
-    
+
     var body: some View {
         Group {
             HStack {
@@ -147,7 +149,7 @@ struct CurrentEpisodeInformation: View {
                 Spacer()
             }
             .padding(.vertical, 4)
-            
+
             HStack {
                 Text(movie.episodeDescriptionDisplay)
                     .font(.subheadline)

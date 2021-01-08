@@ -11,16 +11,16 @@ struct PlayButton: View {
     var text: String
     var imageName: String
     var backgroundColor: Color = Color.white
-    
+
     var action: () -> Void
-    
+
     var body: some View {
         Button(action: action, label: {
             HStack {
                 Spacer()
                 Image(systemName: imageName)
                     .font(.headline)
-                
+
                 Text(text)
                     .bold()
                     .font(.system(size: 16))

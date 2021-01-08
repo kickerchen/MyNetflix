@@ -10,7 +10,7 @@ import Kingfisher
 
 struct TopMoviePreview: View {
     var movie: Movie
-    
+
     func isCategoryLast(_ cat: String) -> Bool {
         movie.categories.firstIndex(of: cat) == movie.categories.count - 1
     }
@@ -21,13 +21,13 @@ struct TopMoviePreview: View {
                 .resizable()
                 .scaledToFill()
                 .clipped()
-            
+
             VStack {
                 Spacer()
-                
+
                 HStack {
                     ForEach(movie.categories, id: \.self) { cat in
-                        
+
                         HStack {
                             Text(cat)
                                 .font(.footnote)
