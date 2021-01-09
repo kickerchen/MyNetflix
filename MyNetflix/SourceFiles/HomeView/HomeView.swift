@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     var viewModel = HomeVM()
 
+    @State private var movieDetailToShow: Movie?
+
     var body: some View {
         ZStack {
             Color.black
@@ -42,12 +44,21 @@ struct HomeView: View {
                                     StandardHomeMovie(movie: movie)
                                         .frame(width: 100, height: 200)
                                         .padding(.horizontal, 20)
+                                        .onTapGesture {
+                                            movieDetailToShow = movie
+                                        }
                                 }
                             }
                         })
                     }
                 }
             })
+
+            if let movie = movieDetailToShow {
+                MovieDetail(movie: movie, movieDetailToShow: $movieDetailToShow )
+                    .animation(.easeIn)
+                    .transition(.opacity)
+            }
         }
         .foregroundColor(.white)
     }
