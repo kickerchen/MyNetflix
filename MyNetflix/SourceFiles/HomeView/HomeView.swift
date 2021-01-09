@@ -7,10 +7,31 @@
 
 import SwiftUI
 
+enum HomeTopRow: String, CaseIterable {
+    case home = "Home"
+    case tvShows = "TV Shows"
+    case movies = "Movies"
+    case myList = "My List"
+}
+
+enum HomeGenre {
+    case allGenres
+    case action
+    case comedy
+    case horror
+    case thriller
+}
+
 struct HomeView: View {
     var viewModel = HomeVM()
 
     @State private var movieDetailToShow: Movie?
+
+    @State private var topRowSelection: HomeTopRow = .home
+    @State private var homeGenre: HomeGenre = .allGenres
+
+    @State private var showGenreSelection = false
+    @State private var showTopRowSelection = false
 
     var body: some View {
         ZStack {
@@ -21,7 +42,8 @@ struct HomeView: View {
             ScrollView(.vertical, showsIndicators: false, content: {
                 LazyVStack {
 
-                    TopRowButtons()
+                    // swiftlint:disable:next line_length
+                    TopRowButtons(topRowSelection: $topRowSelection, homeGenre: $homeGenre, showGenreSelection: $showGenreSelection, showTopRowSelection: $showTopRowSelection)
 
                     TopMoviePreview(movie: exampleMovie4)
                         .frame(width: UIScreen.main.bounds.width)
@@ -67,50 +89,5 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-    }
-}
-
-struct TopRowButtons: View {
-    var body: some View {
-        HStack {
-            Button(action: {
-                //
-            }, label: {
-                Image("netflix_logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50)
-            })
-            .buttonStyle(PlainButtonStyle())
-
-            Spacer()
-
-            Button(action: {
-                //
-            }, label: {
-                Text("TV Shows")
-            })
-            .buttonStyle(PlainButtonStyle())
-
-            Spacer()
-
-            Button(action: {
-                //
-            }, label: {
-                Text("Movies")
-            })
-            .buttonStyle(PlainButtonStyle())
-
-            Spacer()
-
-            Button(action: {
-                //
-            }, label: {
-                Text("My List")
-            })
-            .buttonStyle(PlainButtonStyle())
-        }
-        .padding(.leading, 10)
-        .padding(.trailing, 30)
     }
 }
