@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum MovieType {
+    case movie
+    case tvShow
+}
+
 struct Movie: Identifiable {
     var id: String // swiftlint:disable:this identifier_name
     var name: String
@@ -28,6 +33,8 @@ struct Movie: Identifiable {
     var moreLikeThisMovies: [Movie]
 
     var episodes: [Episode]?
+
+    var movieType: MovieType { episodes == nil ? .movie : .tvShow }
 
     var promotionHeadline: String?
 

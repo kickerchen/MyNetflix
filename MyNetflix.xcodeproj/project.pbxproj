@@ -30,6 +30,7 @@
 		797A3FDD25A86B440047D5DA /* TrailerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797A3FDC25A86B440047D5DA /* TrailerList.swift */; };
 		797A3FE525A897D00047D5DA /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797A3FE425A897D00047D5DA /* EpisodesView.swift */; };
 		798534DF25A9C69400DE2F9E /* TopRowButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798534DE25A9C69400DE2F9E /* TopRowButtons.swift */; };
+		798534EA25A9E94900DE2F9E /* HomeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798534E925A9E94900DE2F9E /* HomeStack.swift */; };
 		799CDAF725A6A8A000F710AF /* CustomTabSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CDAF625A6A8A000F710AF /* CustomTabSwitcher.swift */; };
 		799CDAFD25A7554500F710AF /* MoreLikeThis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CDAFC25A7554500F710AF /* MoreLikeThis.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		797A3FDC25A86B440047D5DA /* TrailerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerList.swift; sourceTree = "<group>"; };
 		797A3FE425A897D00047D5DA /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
 		798534DE25A9C69400DE2F9E /* TopRowButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRowButtons.swift; sourceTree = "<group>"; };
+		798534E925A9E94900DE2F9E /* HomeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStack.swift; sourceTree = "<group>"; };
 		799CDAF625A6A8A000F710AF /* CustomTabSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabSwitcher.swift; sourceTree = "<group>"; };
 		799CDAFC25A7554500F710AF /* MoreLikeThis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLikeThis.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +189,7 @@
 			children = (
 				7918F25925A5A8A50079F446 /* TopMoviePreview.swift */,
 				798534DE25A9C69400DE2F9E /* TopRowButtons.swift */,
+				798534E925A9E94900DE2F9E /* HomeStack.swift */,
 				7918F23025A5A21B0079F446 /* HomeView.swift */,
 				7918F23825A5A2380079F446 /* HomeVM.swift */,
 			);
@@ -419,6 +422,7 @@
 				7918F26225A5A8D90079F446 /* SmallVerticalButton.swift in Sources */,
 				7918F26725A5AA4E0079F446 /* PlayButton.swift in Sources */,
 				7918F26C25A5AD500079F446 /* MovieDetail.swift in Sources */,
+				798534EA25A9E94900DE2F9E /* HomeStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

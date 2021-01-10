@@ -50,29 +50,8 @@ struct HomeView: View {
                         .padding(.top, -110)
                         .zIndex(-1)
 
-                    ForEach(viewModel.allCategories, id: \.self) { category in
-                        VStack {
-                            HStack {
-                                Text(category)
-                                    .font(.title3)
-                                    .bold()
-                                Spacer()
-                            }
-                        }
-
-                        ScrollView(.horizontal, showsIndicators: false, content: {
-                            HStack {
-                                ForEach(viewModel.getMovie(forCat: category)) { movie in
-                                    StandardHomeMovie(movie: movie)
-                                        .frame(width: 100, height: 200)
-                                        .padding(.horizontal, 20)
-                                        .onTapGesture {
-                                            movieDetailToShow = movie
-                                        }
-                                }
-                            }
-                        })
-                    }
+                    // swiftlint:disable:next line_length
+                    HomeStack(viewModel: viewModel, topRowSelection: topRowSelection, movieDetailToShow: $movieDetailToShow)
                 }
             })
 
