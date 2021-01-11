@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TopRowButtons: View {
     @Binding var topRowSelection: HomeTopRow
-    @Binding var homeGenre: HomeGenre
+    @Binding var homeGenre: MovieGenre
 
     @Binding var showGenreSelection: Bool
     @Binding var showTopRowSelection: Bool

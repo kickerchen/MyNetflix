@@ -14,21 +14,13 @@ enum HomeTopRow: String, CaseIterable {
     case myList = "My List"
 }
 
-enum HomeGenre {
-    case allGenres
-    case action
-    case comedy
-    case horror
-    case thriller
-}
-
 struct HomeView: View {
     var viewModel = HomeVM()
 
     @State private var movieDetailToShow: Movie?
 
     @State private var topRowSelection: HomeTopRow = .home
-    @State private var homeGenre: HomeGenre = .allGenres
+    @State private var homeGenre: MovieGenre = .allGenres
 
     @State private var showGenreSelection = false
     @State private var showTopRowSelection = false
@@ -51,7 +43,7 @@ struct HomeView: View {
                         .zIndex(-1)
 
                     // swiftlint:disable:next line_length
-                    HomeStack(viewModel: viewModel, topRowSelection: topRowSelection, movieDetailToShow: $movieDetailToShow)
+                    HomeStack(viewModel: viewModel, topRowSelection: topRowSelection, selectedGenre: homeGenre, movieDetailToShow: $movieDetailToShow)
                 }
             })
 
@@ -59,6 +51,85 @@ struct HomeView: View {
                 MovieDetail(movie: movie, movieDetailToShow: $movieDetailToShow )
                     .animation(.easeIn)
                     .transition(.opacity)
+            }
+
+            if showTopRowSelection {
+                Group {
+                    Color.black.opacity(0.9)
+
+                    VStack(spacing: 40) {
+                        Spacer()
+
+                        ForEach(HomeTopRow.allCases, id: \.self) { topRow in
+
+                            Button(action: {
+                                topRowSelection = topRow
+                                showTopRowSelection = false
+                            }, label: {
+                                if topRow == topRowSelection {
+                                    Text("\(topRow.rawValue)")
+                                        .bold()
+                                } else {
+                                    Text("\(topRow.rawValue)")
+                                        .foregroundColor(.gray)
+                                }
+                            })
+                        }
+
+                        Spacer()
+
+                        Button(action: {
+                            showTopRowSelection = false
+                        }, label: {
+                            Image(systemName: "x.circle.fill")
+                                .font(.system(size: 40))
+                        })
+                        .padding(.bottom, 30)
+                    }
+                }
+                .edgesIgnoringSafeArea(.all)
+                .font(.title2)
+            }
+
+            if showGenreSelection {
+                Group {
+                    Color.black.opacity(0.9)
+
+                    VStack(spacing: 40) {
+                        Spacer()
+
+                        ScrollView {
+                            ForEach(viewModel.allGenre, id: \.self) { genre in
+
+                                Button(action: {
+                                    homeGenre = genre
+                                    showGenreSelection = false
+                                }, label: {
+                                    if genre == homeGenre {
+                                        Text("\(genre.rawValue)")
+                                            .bold()
+                                    } else {
+                                        Text("\(genre.rawValue)")
+                                            .foregroundColor(.gray)
+                                    }
+                                })
+                                .padding(.bottom, 40)
+                            }
+                        }
+
+                        Spacer()
+
+                        Button(action: {
+                            showGenreSelection = false
+                        }, label: {
+                            Image(systemName: "x.circle.fill")
+                                .font(.system(size: 40))
+                        })
+                        .padding(.bottom, 30)
+                    }
+                }
+                .edgesIgnoringSafeArea(.all)
+                .font(.title2)
             }
         }
         .foregroundColor(.white)

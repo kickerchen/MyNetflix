@@ -12,11 +12,20 @@ enum MovieType {
     case tvShow
 }
 
+enum MovieGenre: String {
+    case allGenres = "AllGenres"
+    case action = "Action"
+    case comedy = "Comedy"
+    case horror = "Horror"
+    case thriller = "Thriller"
+}
+
 struct Movie: Identifiable {
     var id: String // swiftlint:disable:this identifier_name
     var name: String
     var thumbnailURL: URL
     var categories: [String]
+    var genre: MovieGenre = .allGenres
 
     // MovieDetail view
     var year: Int
