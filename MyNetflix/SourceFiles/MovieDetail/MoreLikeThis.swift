@@ -10,15 +10,11 @@ import SwiftUI
 struct MoreLikeThis: View {
     var movies: [Movie]
 
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
+    let layout: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
 
     var body: some View {
 
-        LazyVGrid(columns: columns) {
+        LazyVGrid(columns: layout) {
             ForEach(0..<movies.count) { index in
                 StandardHomeMovie(movie: movies[index])
             }
