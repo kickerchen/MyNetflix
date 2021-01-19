@@ -40,6 +40,7 @@
 		799CDAF725A6A8A000F710AF /* CustomTabSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CDAF625A6A8A000F710AF /* CustomTabSwitcher.swift */; };
 		799CDAFD25A7554500F710AF /* MoreLikeThis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CDAFC25A7554500F710AF /* MoreLikeThis.swift */; };
 		79AD4E3625B19321001A3479 /* PopularMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AD4E3525B19321001A3479 /* PopularMovieView.swift */; };
+		79AD4E3D25B6F9EC001A3479 /* SearchResultsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AD4E3C25B6F9EC001A3479 /* SearchResultsGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		799CDAF625A6A8A000F710AF /* CustomTabSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabSwitcher.swift; sourceTree = "<group>"; };
 		799CDAFC25A7554500F710AF /* MoreLikeThis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLikeThis.swift; sourceTree = "<group>"; };
 		79AD4E3525B19321001A3479 /* PopularMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieView.swift; sourceTree = "<group>"; };
+		79AD4E3C25B6F9EC001A3479 /* SearchResultsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 				798534FA25AC281100DE2F9E /* SearchBar.swift */,
 				7985350F25AC360500DE2F9E /* SearchView.swift */,
 				7985351425AC365F00DE2F9E /* SearchVM.swift */,
+				79AD4E3C25B6F9EC001A3479 /* SearchResultsGrid.swift */,
 				79AD4E3525B19321001A3479 /* PopularMovieView.swift */,
 			);
 			path = Search;
@@ -448,6 +451,7 @@
 				7918F24825A5A5F00079F446 /* StandardHomeMovie.swift in Sources */,
 				79AD4E3625B19321001A3479 /* PopularMovieView.swift in Sources */,
 				7985351525AC366000DE2F9E /* SearchVM.swift in Sources */,
+				79AD4E3D25B6F9EC001A3479 /* SearchResultsGrid.swift in Sources */,
 				7985350325AC295300DE2F9E /* Colors.swift in Sources */,
 				7985351025AC360500DE2F9E /* SearchView.swift in Sources */,
 				7918F23E25A5A2440079F446 /* Movie.swift in Sources */,

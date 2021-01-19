@@ -31,13 +31,14 @@ struct HomeStack: View {
                     // swiftlint:disable:next line_length
                     ForEach(viewModel.getMovie(forCat: category, andHomeRow: topRowSelection, andGenre: selectedGenre)) { movie in
                         StandardHomeMovie(movie: movie)
-                            .frame(width: 100, height: 200)
-                            .padding(.horizontal, 20)
+                            .frame(width: 130, height: 200)
+                            .padding(.leading, 10)
                             .onTapGesture {
                                 movieDetailToShow = movie
                             }
                     }
                 }
+                .padding(.horizontal, 10)
             })
         }
     }

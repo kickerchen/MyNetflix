@@ -12,9 +12,13 @@ struct StandardHomeMovie: View {
     var movie: Movie
 
     var body: some View {
-        KFImage(movie.thumbnailURL)
-            .resizable()
-            .scaledToFill()
+        GeometryReader { geo in
+            KFImage(movie.thumbnailURL)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: geo.size.width)
+                .clipped()
+        }
     }
 }
 
